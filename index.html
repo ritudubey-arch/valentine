@@ -1,151 +1,199 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Valentine’s Day</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Be My Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow:hidden;
+}
 
-    .card {
-      background: white;
-      padding: 32px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      width: 90%;
-      max-width: 360px;
-      position: relative;
-    }
+/* FIRST PAGE */
+.page1{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff4d6d,#ff758f);
+  color:white;
+  text-align:center;
+}
 
-    h1 {
-      color: #333;
-      font-size: 22px;
-      margin-bottom: 12px;
-      font-weight: normal;
-    }
+.card{
+  background:white;
+  color:#333;
+  padding:35px;
+  border-radius:20px;
+  width:90%;
+  max-width:380px;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
 
-    p {
-      color: #666;
-      font-size: 15px;
-      margin-bottom: 26px;
-      line-height: 1.5;
-    }
+.card h1{
+  font-size:22px;
+}
 
-    button {
-      padding: 12px 24px;
-      font-size: 15px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-    }
+.card p{
+  font-size:15px;
+  margin:15px 0 25px;
+}
 
-    .yes {
-      background: #ff4d6d;
-      color: white;
-      margin-right: 10px;
-    }
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  font-size:15px;
+  cursor:pointer;
+}
 
-    .no {
-      background: #e0e0e0;
-      position: absolute;
-      left: 20px;
-      top: 150px;
-    }
-  </style>
+.yes{
+  background:#ff4d6d;
+  color:white;
+  margin-right:10px;
+}
+
+.no{
+  background:#ddd;
+  position:absolute;
+  left:40px;
+  top:160px;
+}
+
+/* SECOND + FINAL PAGE */
+.fullscreen{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.fade{
+  animation:fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.message-box{
+  background:rgba(255,255,255,0.15);
+  padding:30px;
+  border-radius:20px;
+  max-width:600px;
+  backdrop-filter:blur(10px);
+}
+
+img{
+  width:220px;
+  border-radius:15px;
+  margin:15px 0;
+}
+
+</style>
 </head>
 
-<body>
+<body >
 
+<div class="page1">
   <div class="card">
-    <h1>Hey love,<br>even though we’re in different places today…</h1>
-    <p>you’re still very much here.</p>
+    <h1>Hey Rovan ❤️</h1>
+    <p>Even if miles separate us… my heart still beats for you 💕<br><br>
+    Will you be my Valentine? 😘</p>
 
-    <button class="yes" onclick="yesClick()">Always</button>
-    <button class="no" id="noBtn">You know it</button>
+    <button class="yes" onclick="yesClick()">Yes 😍</button>
+    <button class="no" id="noBtn">No 🙈</button>
   </div>
+</div>
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
-    const card = document.querySelector(".card");
+<script>
 
-    function randomMove() {
-      const maxX = card.clientWidth - noBtn.offsetWidth;
-      const maxY = card.clientHeight - noBtn.offsetHeight;
+const noBtn = document.getElementById("noBtn");
+const card = document.querySelector(".card");
 
-      noBtn.style.left = Math.random() * maxX + "px";
-      noBtn.style.top = Math.random() * maxY + "px";
-    }
+function randomMove(){
+  const maxX = card.clientWidth - noBtn.offsetWidth;
+  const maxY = card.clientHeight - noBtn.offsetHeight;
+  noBtn.style.left = Math.random()*maxX + "px";
+  noBtn.style.top = Math.random()*maxY + "px";
+}
 
-    setInterval(randomMove, 700);
+setInterval(randomMove,700);
 
-    function yesClick() {
-      document.body.innerHTML = `
-        <div style="
-          display:flex;
-          flex-direction:column;
-          justify-content:center;
-          align-items:center;
-          height:100vh;
-          background:#ff9a9e;
-          color:#333;
-          text-align:center;
-          padding:20px;
-        ">
-          <h1>Distance doesn’t really change us.</h1>
-          <p style="font-size:16px; max-width:320px;">
-            Different countries, same feelings.<br>
-            Same us.
-          </p>
+function yesClick(){
+  document.body.innerHTML = `
+  <div class="fullscreen fade" style="background:linear-gradient(135deg,#ff9a9e,#fecfef); color:#333;">
+    <h1>Hehehe 😜 I knew it!</h1>
+    <p style="max-width:500px;font-size:18px;">
+      Distance is just a test… and we are passing it with full marks 💯❤️<br><br>
+      Every call, every late night talk, every “I miss you” makes us stronger 💕
+    </p>
 
-          <button onclick="finalMessage()" style="
-            margin-top:20px;
-            padding:12px 25px;
-            border:none;
-            border-radius:25px;
-            background:#ff4d6d;
-            color:white;
-            font-size:16px;
-            cursor:pointer;
-          ">
-            Continue
-          </button>
-        </div>
-      `;
-    }
+    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzOWFzMXJjNWptZTg3ZHBvMmc4eTFyNHBjMDJudDU3NnEzbmh0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yPjxAzSkVFgZO/giphy.gif">
 
-    function finalMessage() {
-      document.body.innerHTML = `
-        <div style="
-          display:flex;
-          flex-direction:column;
-          justify-content:center;
-          align-items:center;
-          height:100vh;
-          background:#ff4d6d;
-          color:white;
-          text-align:center;
-          padding:20px;
-        ">
-          <h1>Happy Valentine’s Day ❤️</h1>
-          <p style="font-size:16px;">
-            No matter where you are,<br>
-            you’re my favourite place.
-          </p>
-        </div>
-      `;
-    }
-  </script>
+
+    <button onclick="finalMessage()" style="
+      margin-top:20px;
+      padding:12px 25px;
+      border:none;
+      border-radius:25px;
+      background:#ff4d6d;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+    ">
+      Open My Heart ❤️
+    </button>
+  </div>
+  `;
+}
+
+function finalMessage(){
+  document.body.innerHTML = `
+  <div class="fullscreen fade" style="background:linear-gradient(135deg,#ff0844,#ffb199); color:white; overflow:auto;">
+    
+    <div class="message-box">
+      <h1>Happy Valentine’s Day My Forever ❤️</h1>
+
+      <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+      <p style="font-size:18px; line-height:1.8;">
+      Thank God I replied to your message that night 🥺❤️<br><br>
+
+From that tiny “Hi” 💌, we went from being strangers to talking for hours about everything and nothing, and somewhere in between those conversations, I found comfort, love, and a feeling of home in you 🏡💞<br><br>
+
+Our late-night giggles, our silly inside jokes, the calmness your voice brings to my chaos, and the love and respect you give so effortlessly… all of it changed the way I understand love completely ❤️✨💕<br><br>
+
+Even though we are in long distance right now, I never truly feel alone because you are always with me, in my thoughts, in my heart, and in my prayers 🙏❤️<br><br>
+
+No matter the situation, no matter the time, I promise to always support you, stand by you, believe in you, and love you endlessly 💖<br><br>
+
+One day this distance will end… and all these “I miss you” will turn into “Come here, I’m not letting you go” 🤗💞<br><br>
+
+You are my peace, my happiness, my forever. I love you more than words can ever explain ❤️✨
+
+      </p>
+
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmkyejk5cjZiNDc1a3JjeWJwZ3FlY2RyYWV5cTNweDI5dHVka214cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ytu2GUYbvhz7zShGwS/giphy.gif">
+
+      <h2>Forever Yours 💍💘</h2>
+    </div>
+
+  </div>
+  `;
+}
+
+</script>
 
 </body>
 </html>
+
